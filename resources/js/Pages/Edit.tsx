@@ -1,19 +1,19 @@
-import { useForm } from "@inertiajs/react";
+import { Head, useForm, Link } from "@inertiajs/react";
 
-export default function Create(){
-    const { data, setData, post, errors, processing } = useForm({
-      title: "",
-      body: "",
+export default function Create({ post }){
+    const { data, setData, put, errors, processing } = useForm({
+      title: post.title,
+      body: post.body,
     })
 
     function submit(e){
-      e.preventDefault()
-      post('/posts');
+      e.preventDefault();
+      put(`/posts/${post.id}`);
     }
 
     return (
       <>
-        <h1 className="title">Create a new post</h1>
+        <h1 className="title">Update Post</h1>
 
         <div className="w-1/2 mx-auto">
           <form onSubmit={submit}>
@@ -41,7 +41,7 @@ export default function Create(){
             <button
               className="primary-btn mt-4"
               disabled={processing}
-            >Create Post
+            >Update Post
             </button>
 
           </form>

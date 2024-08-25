@@ -1,4 +1,4 @@
-import { useForm } from "@inertiajs/react";
+import { useForm, Link } from "@inertiajs/react";
 
 export default function Show({post}){
 
@@ -6,7 +6,7 @@ export default function Show({post}){
 
   function submit(e){
     e.preventDefault()
-    destroy(`/posts/${post.id}`)
+    destroy(`/posts/${post.id}`);
   }
 
   return(
@@ -19,6 +19,7 @@ export default function Show({post}){
         <form onSubmit={submit}>
           <button className="bg-red-500 rounded-md text-sm px-4 py-1 text-white">Delete</button>
         </form>
+        <Link href={`/posts/${post.id}/edit`} className="bg-green-500 rounded-md text-sm px-4 py-1 text-white" >Update</Link>
       </div>
     </>
   )

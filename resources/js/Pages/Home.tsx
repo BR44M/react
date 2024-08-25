@@ -1,4 +1,4 @@
-import { Link, usePage } from "@inertiajs/react";
+import { Head, Link, usePage } from "@inertiajs/react";
 import { useState } from "react";
 
 export default function Home({ posts }){
@@ -13,6 +13,7 @@ export default function Home({ posts }){
 
   return(
     <>
+
       <h1 className="title">List posts</h1>
 
       { flashMsg && <div className="absolute top-24 right-6 bg-rose-500 p-2 rounded-md shadow-lg text-sm text-white">{flashMsg}</div> }
