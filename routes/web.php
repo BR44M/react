@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,8 +26,11 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/posts', [PostController::class, 'index']);
+
+Route::resource('posts', PostController::class)->except('index');
+
 Route::get('/home', function () {
-    sleep(5);
     return Inertia::render('Home');
 });
 

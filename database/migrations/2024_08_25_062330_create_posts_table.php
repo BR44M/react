@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('uid');
+            $table->unsignedInteger('uid')->nullable();
             $table->text('title');
             $table->text('body');
             $table->timestamps();
