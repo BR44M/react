@@ -11,6 +11,7 @@ export default function Home({ posts }){
               <h3 className="title">{post.title}</h3>
               <span className="text-sm text-slate-600">Posts on: {new Date(post.created_at).toLocaleTimeString()}</span>
               <p className="font-medium">{post.body}</p>
+              <Link href={`/posts/${post.id}`} className="text-link">Read more...</Link>
             </div>
         ))}
       </div>
