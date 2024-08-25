@@ -26,6 +26,7 @@ Route::get('/', function () {
 });
 
 Route::get('/home', function () {
+    sleep(5);
     return Inertia::render('Home');
 });
 
