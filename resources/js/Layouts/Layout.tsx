@@ -5,7 +5,7 @@ export default function Layout({ children }) {
         <>
             <header>
                 <nav>
-                    <Link className="nav-link" href="/home">
+                    <Link className="nav-link" href="/posts">
                         Home
                     </Link>
                     <Link className="nav-link" href="/posts/create">

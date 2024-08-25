@@ -5,9 +5,9 @@ export default function Home({ posts }){
   return(
     <>
       <h1 className="title">List posts</h1>
-      <div>
+      <div >
         {posts.data.map(post => (
-            <div id={post.id} className="p-4 border-b">
+            <div key={post.id} id={post.id} className="p-4 border-b">
               <h3 className="title">{post.title}</h3>
               <span className="text-sm text-slate-600">Posts on: {new Date(post.created_at).toLocaleTimeString()}</span>
               <p className="font-medium">{post.body}</p>
